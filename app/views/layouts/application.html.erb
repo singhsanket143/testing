@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CipherSecret</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- <script type="text/javascript" src="app/assets/javascripts/jquery.noty.packaged.min.js"></script> -->
+</head>
+<body>
+  <nav>
+    <%= link_to "Sign Out",destroy_user_session_path,method: :delete %>
+  </nav>
+  <% if notice %>
+    <script type="text/javascript">
+      noty({text: '<%= notice %>', type: 'alert', timeout: 3500, progressBar: true});
+    </script>
+
+    <% end %>
+
+    <% if alert %>
+
+    <script type="text/javascript">
+      noty({text: '<%= alert %>', type: 'error', timeout: 5000, progressBar: true});
+    </script>
+    <% end %>
+
+
+
+<%= yield %>
+
+</body>
+</html>

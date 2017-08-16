@@ -1,0 +1,19 @@
+<div class="createPost">
+  <%= form_for @post, remote: true do |task|%>
+      <%= task.label :content %><br>
+      <%= task.text_area :content %><br>
+      <div class="actions">
+        <%= task.submit id: 'create_post_submit' %>
+      </div>
+      <% end %>
+      <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+</div>
+<div id="posts">
+  <% @feed.each do |post| %>
+  <%= render 'post' , post: post %>
+  <% end %>
+</div>
