@@ -13,8 +13,8 @@ class HomeController < ApplicationController
   		@codes = @langs["languages"]["codes"]
       # @ques=Question.find(params[:questions_id])
       @ques=Question.where(id: params[:id]).first
-      @submission = Submission.new(@ques.id)
-      byebug
+      # @submission = Submission.new(@ques.id)
+      # byebug
       # @ques=Question.find(id)
 
 
